@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Noto+Serif&display=swap');
+
+
+body {
+    font-family: 'Noto Serif', serif;
+    box-sizing: border-box;
+  /* background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%); */
+  background: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700320754.jpg") no-repeat center center fixed;
+  opacity: 0.65;
+  image-rendering: -webkit-optimize-contrast;
+ -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 1.4em;
+}
+
+h2 {
+  font-size: 0.8em;
+}
+
+.currentScore {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  color: white;
+  font-size: 3em;
+  z-index: 10;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-top: -22rem;
+}
+
+.flex-container > div {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  width: 30rem;
+  margin: 20rem 5rem;
+  border-radius: 20px;
+  border: 1px solid rgb(47, 42, 48);
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  background-color: #2a2724;
+  background-image: linear-gradient(315deg, #27201c 0%, #83878d 74%);
+}
+
+#left-side,
+#right-side {
+  min-width: 450px;
+}
+
+.flex-container > div > div {
+  padding: 0.5rem 0.5rem;
+  margin: 0.5rem;
+  width: 180px;
+  min-height: 2rem;
+  max-height: 10rem;
+  border: 1px solid rgb(47, 42, 48);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  color: rgb(70, 70, 73);
+  border-radius: 20px;
+  background: rgba(58, 55, 51, 0.596);
+}
+
+.flex-container > div > div > div {
+  padding: 0.5rem;
+  margin: 5px 0;
+  width: 10rem;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+.flex-container > div > div > div:nth-child(1) {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.flex-container > div > div > div:nth-child(1) {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+.container {
+  perspective: 3000px;
+  perspective-origin: 50% 50%;
+  font-family: "fontawesome";
+}
+
+#user {
+  display: none;
+}
+
+#gameover {
+  position: absolute;
+  visibility: hidden;
+  margin: 0 auto;
+  width: 19rem;
+  padding: 1rem;
+  text-align: center;
+  top: 22rem;
+  left: 50%;
+  margin-left: -10rem;
+  font-size: 0.5em;
+  color: rgb(247, 248, 185);
+  border-radius: 30px;
+  box-shadow: 0 0 20px 5px white;
+}
+
+.cube {
+  position: relative;
+  left: 50%;
+  top: 35rem;
+  margin-left: -100px;
+  height: 200px;
+  width: 200px;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transform: rotateX(135deg) rotateY(-217deg) rotateZ(-88deg);
+  z-index: 1;
+}
+
+.cube div {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 10px;
+  height: 100%;
+  width: 100%;
+  border: 3px solid rgb(182, 177, 177);
+  color: #fff;
+}
+
+.cube div span {
+  font-size: 32px;
+  font-family: "fontawesome";
+}
+
+.fa-circle {
+  color: rgb(255, 255, 255);
+}
+
+.front {
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+  transform: translateZ(100px);
+}
+
+.back {
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+  transform: translateZ(-100px) rotateY(180deg);
+}
+
+.right {
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+  transform-origin: top right;
+  transform: rotateY(-270deg) translateX(100px);
+}
+
+.left {
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+  transform-origin: center left;
+  transform: rotateY(270deg) translateX(-100px);
+}
+
+.top {
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+  transform-origin: top center;
+  transform: rotateX(-270deg) translateY(-100px);
+}
+
+.bottom {
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+  transform-origin: bottom center;
+  transform: rotateX(270deg) translateY(100px);
+}
+
+/* DOT ALIGNMENT */
+
+.front span,
+.left span:nth-child(1),
+.right span:nth-child(1) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.top span:nth-child(1),
+.left span:nth-child(2),
+.right span:nth-child(2),
+.bottom span:nth-child(1) {
+  position: absolute;
+  top: 35px;
+  left: 35px;
+}
+
+.top span:nth-child(2),
+.left span:nth-child(3),
+.right span:nth-child(3),
+.bottom span:nth-child(2) {
+  position: absolute;
+  bottom: 35px;
+  right: 35px;
+}
+
+.right span:nth-child(4),
+.bottom span:nth-child(3) {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+}
+
+.right span:nth-child(5),
+.bottom span:nth-child(4) {
+  position: absolute;
+  bottom: 35px;
+  left: 35px;
+}
+
+.back pre {
+  font-size: 32px;
+  font-family: "fontawesome";
+  margin: 0;
+}
+
+.firstPre {
+  position: absolute;
+  top: 45px;
+  left: 26px;
+}
+
+.secondPre {
+  position: absolute;
+  bottom: 45px;
+  right: 26px;
+}
+
+.circle2 {
+  background: aquamarine;
+  z-index: 10;
+}
+
+@keyframes animate {
+  25% {
+    transform: rotateX(45deg) rotateY(65deg) rotateZ(35deg);
+    top: 20rem;
+  }
+  50% {
+    transform: rotateX(145deg) rotateY(165deg) rotateZ(135deg);
+    top: 0rem;
+  }
+  75% {
+    transform: rotateX(220deg) rotateY(256deg) rotateZ(246deg);
+    top: 20rem;
+  }
+  99% {
+    transform: rotateX(376deg) rotateY(356deg) rotateZ(346deg);
+    top: 40rem;
+  }
+}
