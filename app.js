@@ -10,21 +10,66 @@ let playerNumber = document.getElementById("currentPlayer");
 playerNumber.innerHTML = currentPlayer;
 
 let user = document.getElementById("user");
-let gameover = document.getElementById("gameover")
+let gameover = document.getElementById("gameover");
 let leftSide = document.getElementById("left-side");
 let rightSide = document.getElementById("right-side");
 let currentScore = document.getElementById("currentScore");
 let playerBar = document.getElementsByClassName("playerNumbers");
 let playerScores = document.getElementsByClassName("playerScores");
 let header = document.getElementsByTagName("h1")[0];
-
-console.log(header)
+let holdButton = document.getElementById("takeScore");
 
 let totalScore = 0;
 let count = 1;
 let count2 = 0;
 let firstGo = 1;
 let out = false;
+let gameEnd = false;
+
+const advancePlayer = () => {
+  playerScores[currentPlayer - 1].innerHTML = totalScore;
+  totalScore = 0;
+  currentPlayer++;
+  currentScore.innerHTML = 0;
+  playerNumber.innerHTML = currentPlayer;
+
+  playerBox[currentPlayer - 1].style.border = "2px solid yellow";
+  playerBox[currentPlayer - 1].style.opacity = "1.0";
+  playerBox[currentPlayer - 1].style.boxShadow = "0 0 10px 2px yellow";
+
+  playerBox[currentPlayer - 2].style.border = "none";
+  playerBox[currentPlayer - 2].style.opacity = "0.7";
+  playerBox[currentPlayer - 2].style.boxShadow = "none";
+
+  checkGameEnd();
+};
+
+const restartGame = () => {
+  for (let i = 0; i < players; i++) {
+    playerScores[i].innerHTML = "";
+  }
+
+  holdButton.innerHTML = "HOLD";
+  gameEnd = false;
+  currentPlayer = 1;
+  playerNumber.innerHTML = currentPlayer;
+  playerBox[0].style.border = "2px solid yellow";
+  playerBox[0].style.boxShadow = "0 0 10px 2px yellow";
+  playerBox[0].style.opacity = "1.0";
+};
+
+holdButton.addEventListener("click", () => {
+  gameEnd ? restartGame() : advancePlayer();
+});
+
+const checkGameEnd = () => {
+  if (currentPlayer > players - 1) {
+    holdButton.innerHTML = "Restart Game?";
+    gameEnd = true;
+  }
+};
+
+console.log(header);
 
 for (let i = 1; i < players; i++) {
   players / 2 >= i
@@ -47,8 +92,6 @@ let cube = document.getElementById("cube");
 let sides = cube.getElementsByTagName("div");
 let playerBox = document.getElementsByClassName("word-spacer");
 
-
-
 let angleArray = [
   [0, 0, 0],
   [-320, -362, -38],
@@ -61,16 +104,20 @@ let angleArray = [
 
 console.log("1." + sides);
 
+playerBox[0].style.border = "2px solid yellow";
+playerBox[0].style.boxShadow = "0 0 10px 2px yellow";
+playerBox[0].style.opacity = "1.0";
+
 cube.addEventListener("click", (e) => {
   /* ANIMATION */
 
   let randomAngle = Math.floor(Math.random() * 6) + 1 + firstGo;
-  if (randomAngle === 7){
-    randomAngle -= 1
+  if (randomAngle === 7) {
+    randomAngle -= 1;
   }
 
   console.log(randomAngle);
-  
+
   if (randomAngle === 1) {
     setTimeout(() => {
       for (let i = 0; i < 6; i++) {
@@ -78,13 +125,9 @@ cube.addEventListener("click", (e) => {
         sides[i].style.background =
           "rgba(0, 0, 0, 0) linear-gradient(to right, rgb(235, 51, 73), rgb(244, 92, 67)) repeat scroll 0% 0%";
       }
-      playerScores[currentPlayer - 1].innerHTML = totalScore;
-      gameover.style.visibility = "visible"
-      header.innerHTML = "Game Over"
-      currentScore.innerHTML = 0;
+      gameover.style.visibility = "visible";
+      header.innerHTML = "Game Over";
       totalScore = 0;
-      currentPlayer++;
-      playerNumber.innerHTML = currentPlayer;
     }, 900);
   }
 
@@ -112,14 +155,9 @@ cube.addEventListener("click", (e) => {
     }
   } else {
     out = false;
-    header.innerHTML = "Current Score"
-    gameover.style.visibility = "hidden"
-    playerBox[currentPlayer - 2].style.border = "none"
-    playerBox[currentPlayer - 1].style.border = "2px solid yellow"
-    playerBox[currentPlayer - 2].style.opacity = "0.7"
-    playerBox[currentPlayer - 1].style.opacity = "1.0"
-    playerBox[currentPlayer - 2].style.boxShadow = "none"
-    playerBox[currentPlayer - 1].style.boxShadow = "0 0 10px 2px yellow"
+    header.innerHTML = "Current Score";
+    gameover.style.visibility = "hidden";
+    advancePlayer();
     for (let i = 0; i < 6; i++) {
       sides[i].style.backgroundColor = "#000000";
       sides[i].style.backgroundImage =

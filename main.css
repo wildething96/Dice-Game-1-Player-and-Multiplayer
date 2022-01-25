@@ -23,6 +23,11 @@ h2 {
   font-size: 0.8em;
 }
 
+#playerDiv {
+  margin: -2rem 0 1rem 0;
+  font-size: 0.75em;
+}
+
 .currentScore {
   position: absolute;
   text-align: center;
@@ -104,19 +109,39 @@ h2 {
   width: 19rem;
   padding: 1rem;
   text-align: center;
-  top: 22rem;
+  background-color: rgb(17, 95, 95);
+  top: 42rem;
   left: 50%;
-  margin-left: -10rem;
+  margin-left: -11rem;
   font-size: 0.5em;
-  color: rgb(247, 248, 185);
+  color: rgb(255, 255, 255);
   border-radius: 30px;
   box-shadow: 0 0 20px 5px white;
+}
+
+#takeScore {
+  font-size: 0.5em;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  font-weight: 600;
+  color: #464240;
+  cursor: pointer;
+  border: 1px solid red;
+  border-radius: 30px;
+  opacity: 0.7;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+#spacer {
+  background: none;
+  border: none;
+  box-shadow: none;
 }
 
 .cube {
   position: relative;
   left: 50%;
-  top: 35rem;
+  top: 30rem;
   margin-left: -100px;
   height: 200px;
   width: 200px;
@@ -184,6 +209,7 @@ h2 {
   transform-origin: bottom center;
   transform: rotateX(270deg) translateY(100px);
 }
+
 
 /* DOT ALIGNMENT */
 
@@ -254,18 +280,18 @@ h2 {
 @keyframes animate {
   25% {
     transform: rotateX(45deg) rotateY(65deg) rotateZ(35deg);
-    top: 20rem;
+    top: 15rem;
   }
   50% {
     transform: rotateX(145deg) rotateY(165deg) rotateZ(135deg);
-    top: 0rem;
+    top: -10rem;
   }
   75% {
     transform: rotateX(220deg) rotateY(256deg) rotateZ(246deg);
-    top: 20rem;
+    top: 15rem;
   }
   99% {
     transform: rotateX(376deg) rotateY(356deg) rotateZ(346deg);
-    top: 40rem;
+    top: 30rem;
   }
 }

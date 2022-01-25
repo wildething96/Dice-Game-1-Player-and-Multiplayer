@@ -14,9 +14,9 @@
   <body>
     <div class="currentScore" >
       <h1>Current Score</h1>
-      <h2>Player <span id="currentPlayer"></span></h2>
+      <div id="playerDiv">Player <span id="currentPlayer"></span><div><button id="takeScore">HOLD</button></div></div>
       <div><span id="currentScore">0</span></div>
-      <h3 id="gameover">Click the Dice again for next player</h3>
+      <h3 id="gameover">Click the Dice again to go to next player</h3>
     </div>
     <div class="container">
       <div class="cube" id="cube">
@@ -52,6 +52,7 @@
       </div>
     <div class="flex-container">
      <div id="left-side"></div>
+     <div id="spacer"></div>
      <div id="right-side"></div>
      </div>
     </div>
