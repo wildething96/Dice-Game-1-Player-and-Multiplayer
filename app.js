@@ -59,12 +59,14 @@ const restartGame = () => {
 };
 
 holdButton.addEventListener("click", () => {
-  gameEnd ? restartGame() : advancePlayer();
+  if (gameEnd){restartGame()} 
+  else if(totalScore !== 0){advancePlayer()};
 });
 
 const checkGameEnd = () => {
   if (currentPlayer > players - 1) {
     holdButton.innerHTML = "Restart Game?";
+    playerNumber.innerHTML = currentPlayer - 1;
     gameEnd = true;
   }
 };
