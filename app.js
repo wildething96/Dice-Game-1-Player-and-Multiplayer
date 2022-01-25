@@ -27,6 +27,8 @@ let out = false;
 let gameEnd = false;
 let highestScore = 0;
 let highestScorer;
+let justClicked = false;
+let timeOut = 0;
 
 const advancePlayer = () => {
   highestScore < totalScore
@@ -125,6 +127,10 @@ playerBox[0].style.boxShadow = "0 0 10px 2px yellow";
 playerBox[0].style.opacity = "1.0";
 
 cube.addEventListener("click", (e) => {
+  
+  if(!justClicked){
+    
+  justClicked = true;
   if (!gameEnd) {
     /* ANIMATION */
 
@@ -190,4 +196,8 @@ cube.addEventListener("click", (e) => {
       firstGo = 1;
     }
   }
+  setTimeout(() => {
+    justClicked = false;
+  }, 1100)
+}
 });
