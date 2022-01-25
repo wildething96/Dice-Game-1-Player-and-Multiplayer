@@ -25,8 +25,13 @@ let count2 = 0;
 let firstGo = 1;
 let out = false;
 let gameEnd = false;
+let highestScore = 0;
+let highestScorer;
 
 const advancePlayer = () => {
+  highestScore < totalScore
+    ? ((highestScore = totalScore), (highestScorer = currentPlayer))
+    : 0;
   playerScores[currentPlayer - 1].innerHTML = totalScore;
   totalScore = 0;
   currentPlayer++;
@@ -45,6 +50,11 @@ const advancePlayer = () => {
 };
 
 const restartGame = () => {
+  totalScore = 0;
+  header.innerHTML = "Current Score";
+  currentScore.innerHTML = totalScore
+  highestScore = 0;
+  highestScore = "";
   for (let i = 0; i < players; i++) {
     playerScores[i].innerHTML = "";
   }
@@ -59,14 +69,18 @@ const restartGame = () => {
 };
 
 holdButton.addEventListener("click", () => {
-  if (gameEnd){restartGame()} 
-  else if(totalScore !== 0){advancePlayer()};
+  if (gameEnd) {
+    restartGame();
+  } else if (totalScore !== 0) {
+    advancePlayer();
+  }
 });
 
 const checkGameEnd = () => {
   if (currentPlayer > players - 1) {
     holdButton.innerHTML = "Restart Game?";
     playerNumber.innerHTML = currentPlayer - 1;
+    header.innerHTML = `The Winner is Player ${highestScorer}`;
     gameEnd = true;
   }
 };
@@ -129,6 +143,9 @@ cube.addEventListener("click", (e) => {
       }
       gameover.style.visibility = "visible";
       header.innerHTML = "Game Over";
+      highestScore < totalScore
+        ? ((highestScore = totalScore), (highestScorer = currentPlayer))
+        : 0;
       totalScore = 0;
     }, 900);
   }
