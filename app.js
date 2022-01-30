@@ -25,17 +25,13 @@ let count2 = 0;
 let firstGo = 1;
 let out = false;
 let gameEnd = false;
-let highestScore = 0;
-let highestScorer;
+let highestScore = [];
+let highestScorer = 0;
 let justClicked = false;
 let timeOut = 0;
 
 const advancePlayer = (randomAngle) => {
-  if (randomAngle !== 1) {
-    highestScore < totalScore
-      ? ((highestScore = totalScore), (highestScorer = currentPlayer))
-      : 0;
-  }
+  addHighScore();
   playerScores[currentPlayer - 1].innerHTML = totalScore;
   totalScore = 0;
   firstGo = 1;
@@ -59,7 +55,7 @@ const restartGame = () => {
   firstGo = 1;
   header.innerHTML = "Current Score";
   currentScore.innerHTML = totalScore;
-  highestScore = 0;
+  highestScore = [];
   highestScorer = 0;
   for (let i = 0; i < players; i++) {
     playerScores[i].innerHTML = "";
@@ -76,16 +72,49 @@ const restartGame = () => {
 
 const checkGameEnd = () => {
   if (currentPlayer > players - 1) {
+    console.log(highestScore);
+    console.log(highestScorer);
+    highestScorer = checkWinner();
+    console.log("hs" + checkWinner());
     holdButton.innerHTML = "Restart Game?";
     playerNumber.innerHTML = currentPlayer - 1;
-    highestScore !== 0
-      ? (header.innerHTML = `The Winner is Player ${highestScorer}!`)
+    console.log(highestScorer != 0);
+    highestScorer !== 7
+      ? (header.innerHTML = `The Winner is Player ${highestScorer + 1}!`)
       : (header.innerHTML = "It was a draw!");
     gameEnd = true;
   }
 };
 
-console.log(header);
+const addHighScore = (randomAngle = 0) => {
+  if (randomAngle !== 1) {
+    highestScore.push(totalScore);
+  } else {
+    highestScore.push(0);
+  }
+  console.log(highestScore);
+  console.log(highestScorer);
+};
+
+const checkWinner = () => {
+  let highestValue = Math.max(...highestScore);
+  let amount = 0;
+
+  console.log("hv" + highestValue);
+
+  highestScore.forEach((e) => {
+    highestValue === e ? amount++ : 0;
+    console.log(e);
+    console.log(highestValue === e);
+  });
+
+  console.log(amount);
+  if (amount === 1) {
+    return highestScore.indexOf(highestValue);
+  } else {
+    return 7;
+  }
+};
 
 for (let i = 1; i < players; i++) {
   players / 2 >= i
@@ -118,27 +147,27 @@ playerBox[0].style.boxShadow = "0 0 10px 2px yellow";
 playerBox[0].style.opacity = "1.0";
 
 holdButton.addEventListener("click", () => {
-  if (gameEnd) {
-    restartGame();
-  } else if (totalScore !== 0) {
-    advancePlayer(0);
+  if (!justClicked) {
+    if (gameEnd) {
+      restartGame();
+    } else if (totalScore !== 0) {
+      advancePlayer(0);
+    }
   }
 });
 
 cube.addEventListener("click", (e) => {
-  console.log(highestScore);
-  console.log(highestScorer);
+  console.log(highestScore)
   if (!justClicked) {
     justClicked = true;
+
     if (!gameEnd) {
       /* ANIMATION */
-
       let randomAngle = Math.floor(Math.random() * 6) + 1 + firstGo;
+
       if (randomAngle === 7) {
         randomAngle -= 1;
       }
-
-      console.log(randomAngle);
 
       if (randomAngle === 1) {
         setTimeout(() => {
@@ -149,11 +178,7 @@ cube.addEventListener("click", (e) => {
           }
           gameover.style.visibility = "visible";
           header.innerHTML = "Game Over";
-          if (randomAngle !== 1) {
-            highestScore < totalScore
-              ? ((highestScore = totalScore), (highestScorer = currentPlayer))
-              : 0;
-          }
+          advancePlayer;
           totalScore = 0;
         }, 900);
       }
@@ -191,7 +216,6 @@ cube.addEventListener("click", (e) => {
             "linear-gradient(147deg, #000000 0%, #2c3e50 74%)";
         }
       }
-
       if (randomAngle === 1) {
         out = true;
         firstGo = 1;

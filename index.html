@@ -4,17 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="home.css">
     <title>Document</title>
   </head>
   <body>
-    <div>How many players?</div>
+    <h1 class="title" aria-label="Dice Game"></h1>
+    <div>
+    <div class="container">
+      <div class="y-line"></div>
+      <div class="container2">
+        <div class="solo">Solo Mode</div>
+    <div class="multiplayer">
+    <div class="players">Multiplayer</div>
+    <div class="players2">How many players?</div>
     <form method="get" action="game.html">
-      <input type="number" name="p" id="p" />
-
+      <input  type="text" name="p" id="p" value="2" />
+      <br />
       <button onclick="getPlayers(document.getElementById('p').value)">
         Start Game
       </button>
     </form>
+  </div>
+  </div>
+  </div>
   </body>
   <script src="app.js"></script>
 </html>
