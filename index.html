@@ -13,12 +13,14 @@
     <div class="container">
       <div class="y-line"></div>
       <div class="container2">
-        <div class="solo">Solo Mode</div>
+        <div class="solo"><a href="solo.html">Solo Mode</a></div>
     <div class="multiplayer">
     <div class="players">Multiplayer</div>
     <div class="players2">How many players?</div>
-    <form method="get" action="game.html">
-      <input  type="text" name="p" id="p" value="2" />
+    <form method="get" action="multiplayer.html">
+      <input   name="p" id="p" value="2" type="range" min="2" max="50" oninput="updateTextInput(this.value);">
+      <br />
+      <input type="text" id="textInput" value="2" disabled="disabled">
       <br />
       <button onclick="getPlayers(document.getElementById('p').value)">
         Start Game

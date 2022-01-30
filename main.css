@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Noto+Serif&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Noto+Serif&display=swap");
 
 body {
-    font-family: 'Noto Serif', serif;
-    box-sizing: border-box;
+  font-family: "Noto Serif", serif;
+  box-sizing: border-box;
   /* background-color: #485461;
     background-image: linear-gradient(315deg, #485461 0%, #28313b 74%); */
-  background: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700320754.jpg") no-repeat center center fixed;
+  background: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700320754.jpg")
+    no-repeat center center fixed;
   opacity: 0.65;
   image-rendering: -webkit-optimize-contrast;
- -webkit-background-size: cover;
+  -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
@@ -46,13 +46,18 @@ h2 {
 }
 
 .flex-container > div {
-  box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset, rgb(20, 20, 20) 0px 54px 55px, rgb(20, 20, 20) 0px -12px 30px, rgb(20, 20, 20) 0px 4px 6px, rgb(20, 20, 20) 0px 12px 13px, rgb(20, 20, 20) 0px -3px 5px, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; 
+  box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset,
+    rgb(20, 20, 20) 0px 54px 55px, rgb(20, 20, 20) 0px -12px 30px,
+    rgb(20, 20, 20) 0px 4px 6px, rgb(20, 20, 20) 0px 12px 13px,
+    rgb(20, 20, 20) 0px -3px 5px, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   width: 30rem;
   margin: 20rem 5rem;
   border-radius: 20px;
   border: 1px solid rgb(47, 42, 48);
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   flex-wrap: wrap;
   background-color: #2a2724;
   background-image: linear-gradient(315deg, #27201c 0%, #83878d 74%);
@@ -67,10 +72,11 @@ h2 {
   padding: 0.5rem 0.5rem;
   margin: 0.5rem;
   width: 180px;
-  min-height: 2rem;
-  max-height: 10rem;
+  height: 5.5rem;
   border: 1px solid rgb(47, 42, 48);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   color: rgb(70, 70, 73);
   border-radius: 20px;
   background: rgba(58, 55, 51, 0.596);
@@ -85,12 +91,14 @@ h2 {
 }
 
 .flex-container > div > div > div:nth-child(1) {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 .flex-container > div > div > div:nth-child(1) {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  text-align: center;
 }
 .container {
   perspective: 3000px;
@@ -129,7 +137,11 @@ h2 {
   border: 1px solid red;
   border-radius: 30px;
   opacity: 0.7;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset, rgb(20, 20, 20) 0px 54px 55px, rgb(20, 20, 20) 0px -12px 30px, rgb(20, 20, 20) 0px 4px 6px, rgb(20, 20, 20) 0px 12px 13px, rgb(20, 20, 20) 0px -3px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset, rgb(20, 20, 20) 0px 54px 55px,
+    rgb(20, 20, 20) 0px -12px 30px, rgb(20, 20, 20) 0px 4px 6px,
+    rgb(20, 20, 20) 0px 12px 13px, rgb(20, 20, 20) 0px -3px 5px;
 }
 
 #spacer {
@@ -164,6 +176,23 @@ h2 {
 .cube div span {
   font-size: 32px;
   font-family: "fontawesome";
+}
+
+.info {
+  font-size: 2.6em;
+  font-weight: 600;
+  color: rgb(237, 240, 241);
+  text-align: center;
+  text-shadow: 0 0 10px rgb(165, 163, 158);
+  line-height: 3rem;
+}
+
+.win {
+  color: rgba(32, 216, 32, 0.787);
+}
+
+.lose {
+  color: rgba(255, 0, 0, 0.753);
 }
 
 .fa-circle {
@@ -209,7 +238,6 @@ h2 {
   transform-origin: bottom center;
   transform: rotateX(270deg) translateY(100px);
 }
-
 
 /* DOT ALIGNMENT */
 

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <title>Dice Game</title>
+  </head>
+  <body>
+    <div class="currentScore" >
+      <h1>Current Score</h1>
+      <div id="playerDiv"><div><button id="takeScore">Restart</button></div></div>
+      <div><span id="currentScore">0</span></div>
+      <h3 id="gameover">Click the Dice again to Restart or Click Restart</h3>
+    </div>
+    <div class="container">
+      <div class="cube" id="cube">
+        <div class="front">
+            <span class="fas fa-circle"></span>
+        </div>
+        <div class="back">
+            <pre class="firstPre"><span class="fas fa-circle"></span>    <span class="fas fa-circle">    <span class="fas fa-circle"></span></pre>
+            <pre class="secondPre"><span class="fas fa-circle"></span>    <span class="fas fa-circle">    <span class="fas fa-circle"></span></pre>
+        </div>
+        <div class="top">
+            <span class="fas fa-circle"></span>
+            <span class="fas fa-circle"></span>
+        </div>
+        <div class="left">
+            <span class="fas fa-circle"></span>
+            <span class="fas fa-circle"><span class="fas fa-circle cirlce2"></span></span>
+            <span class="fas fa-circle"></span>
+        </div>
+        <div class="right">
+            <span class="fas fa-circle"></span>
+            <span class="fas fa-circle"></span>
+            <span class="fas fa-circle"></span>
+            <span class="fas fa-circle"></span>
+            <span class="fas fa-circle"></span>
+        </div>
+        <div class="bottom">
+            <span class="fas fa-circle"></span>
+            <span class="fas fa-circle"></span>
+            <span class="fas fa-circle"></span>
+            <span class="fas fa-circle"></span>
+        </div>
+      </div>
+    <div class="flex-container">
+     <div id="left-side">
+        <div class="word-spacer">
+          <div>Player</span></div>
+          <div>Wins: <span id="playerWins">0</span> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspLoses: <span id="playerLoses">0</span></div>
+        </div>
+      </div>
+      <div id="spacer"></div>
+      <div id="right-side">
+      <p class="info"> Welcome to Dice Game<br /><br /> Get over 20 to <span class="win">Win!</span> <br /><br /> Role a 1 before you get to 20 and you <span class="lose">Lose</span>.</p>
+      </div>
+    </div>
+    </div>
+    <script type="module" src="soloApp.js"></script>
+  </body>
+</html>

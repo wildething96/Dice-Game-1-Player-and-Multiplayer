@@ -1,3 +1,7 @@
+function updateTextInput(val) {
+  document.getElementById('textInput').value=val; 
+}
+
 let players = localStorage.getItem("someVarKey");
 
 function getPlayers(p) {
