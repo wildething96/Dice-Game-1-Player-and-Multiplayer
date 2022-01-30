@@ -89,29 +89,23 @@ a {
 }
 
 #p {
-    margin-bottom: -1.5rem;
-    -webkit-appearance: none;
-    background-color: burlywood;
-    cursor: pointer;
-    padding: 0 0.2rem;
+  margin-bottom: -1.5rem;
+  -webkit-appearance: none;
+  background-color: burlywood;
+  cursor: pointer;
+  padding: 0 0.2rem;
 }
 
+#p::-moz-range-thumb,
 #p::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    background: #414443;
-    cursor: pointer;
-  }
-
-  #p::-moz-range-thumb {
-    padding: 0 1px;
-    border-radius: 20px;
-    background: #3c3f3f;
-    cursor: pointer;
-  }
+  padding: 0 1px;
+  border-radius: 20px;
+  background: #3c3f3f;
+  cursor: pointer;
+}
 
 #textInput {
-    margin: 0 0 0 1.75rem;
+  margin: 0 0 0 1.75rem;
 }
 
 .solo:hover,
