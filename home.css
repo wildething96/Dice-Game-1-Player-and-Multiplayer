@@ -96,11 +96,12 @@ a {
   padding: 0 0.2rem;
 }
 
-#p::-moz-range-thumb,
-#p::-webkit-slider-thumb {
+#p::-moz-range-thumb {
+  -webkit-appearance: initial;
+  background: #3c3f3f;
   padding: 0 1px;
   border-radius: 20px;
-  background: #3c3f3f;
+  color: #3c3f3f;
   cursor: pointer;
 }
 
